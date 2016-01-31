@@ -22,16 +22,22 @@
 ### 如何使用NDK
 -  Android JNI 原理
 > Android上层的Application和ApplicationFramework都是使用Java编写,底层包括系统和使用众多的LIiraries都是C/C++编写的。所以上层Java要调用底层的C/C++函数库必须通过Java的JNI来实现。
-  ![Android JNI 原理图][1]
+
+![](http://7xohph.com1.z0.glb.clouddn.com/20160131223059.png)
+  
 -  Android studio NDK 开发
 1。解压NDK开发工具集
 2. 打开android  studio,新建Android工程
 3. 点击：File ->ProjectStructure:如图：
-![此处输入图片的描述][2]
+
+![](http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png)
+
 3. 在 local.properties 文件中设置ndk的路径
 4. 在 gradle.properties 添加"android.useDeprecatedNdk=true"
 5. 在 build.gradle 添加NDK 的配置
-![此处输入图片的描述][3]
+
+![](http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png)
+
 6. 添加JAVA 接口类文件
    ``` java
     package com.example.jungou.jnitest;
@@ -49,7 +55,9 @@
 
    ```
 7. 添加jni文件夹
-![此处输入图片的描述][4]
+
+![](http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png)
+
 8. JAVA 接口类使用Alt+回车 自动修正，自动实现C代码
 ``` c
 	#include <jni.h>
@@ -62,10 +70,7 @@
 ```
 
 9. 完成接口调用，测试完成
-![此处输入图片的描述][5]
 
-  [1]: http://7xohph.com1.z0.glb.clouddn.com/20160131223059.png
-  [2]: http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png
-  [3]: http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png
-  [4]: http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png
-  [5]: http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png
+![](http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png)
+
+[demo地址](https://github.com/bingxuebage/android-jni-demo)
