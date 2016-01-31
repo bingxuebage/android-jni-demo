@@ -26,51 +26,43 @@
 ![](http://7xohph.com1.z0.glb.clouddn.com/20160131223059.png)
   
 -  Android studio NDK 开发
-1。解压NDK开发工具集
+
+1. 解压NDK开发工具集
 2. 打开android  studio,新建Android工程
 3. 点击：File ->ProjectStructure:如图：
-
-![](http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png)
-
-3. 在 local.properties 文件中设置ndk的路径
-4. 在 gradle.properties 添加"android.useDeprecatedNdk=true"
-5. 在 build.gradle 添加NDK 的配置
-
-![](http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png)
-
-6. 添加JAVA 接口类文件
-   ``` java
-    package com.example.jungou.jnitest;
-    
-    /**
-     * Created by jungou on 2016/1/28 0028.
-     */
-    public class JniApi {
-        static {
-            System.loadLibrary("jesonlib");
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png)
+4. 在 local.properties 文件中设置ndk的路径
+5. 在 gradle.properties 添加"android.useDeprecatedNdk=true"
+6. 在 build.gradle 添加NDK 的配置
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png)
+7. 添加JAVA 接口类文件
+       ``` java
+        package com.example.jungou.jnitest;
+        
+        /**
+         * Created by jungou on 2016/1/28 0028.
+         */
+        public class JniApi {
+            static {
+                System.loadLibrary("jesonlib");
+            }
+        
+            private native String getTitle();
         }
     
-        private native String getTitle();
-    }
-
-   ```
-7. 添加jni文件夹
-
-![](http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png)
-
-8. JAVA 接口类使用Alt+回车 自动修正，自动实现C代码
-``` c
-	#include <jni.h>
-
-	JNIEXPORT jstring JNICALL
-	Java_com_example_jungou_jnitest_JniApi_getTitle(JNIEnv *env, jobject instance) {
-		// TODO
-		return (*env)->NewStringUTF(env, "hello tile");
-	}
-```
-
-9. 完成接口调用，测试完成
-
-![](http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png)
-
+       ```
+8. 添加jni文件夹
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png)
+9. JAVA 接口类使用Alt+回车 自动修正，自动实现C代码
+    ``` c
+    	#include <jni.h>
+    
+    	JNIEXPORT jstring JNICALL
+    	Java_com_example_jungou_jnitest_JniApi_getTitle(JNIEnv *env, jobject instance) {
+    		// TODO
+    		return (*env)->NewStringUTF(env, "hello tile");
+    	}
+    ```
+10. 完成接口调用，测试完成
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png)
 [demo地址](https://github.com/bingxuebage/android-jni-demo)
