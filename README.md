@@ -23,18 +23,18 @@
 -  Android JNI 原理
 > Android上层的Application和ApplicationFramework都是使用Java编写,底层包括系统和使用众多的LIiraries都是C/C++编写的。所以上层Java要调用底层的C/C++函数库必须通过Java的JNI来实现。
 
-![](http://7xohph.com1.z0.glb.clouddn.com/20160131223059.png)
+![](http://7xohph.com1.z0.glb.clouddn.com/20160131223059.png?imageView2/2/w/600)
   
 -  Android studio NDK 开发
 
 1. 解压NDK开发工具集
 2. 打开android  studio,新建Android工程
 3. 点击：File ->ProjectStructure:如图：
-    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png)
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png?imageView2/2/w/600)
 4. 在 local.properties 文件中设置ndk的路径
 5. 在 gradle.properties 添加"android.useDeprecatedNdk=true"
 6. 在 build.gradle 添加NDK 的配置
-    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png)
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png?imageView2/2/w/600)
 7. 添加JAVA 接口类文件
        ``` java
         package com.example.jungou.jnitest;
@@ -52,7 +52,7 @@
     
        ```
 8. 添加jni文件夹
-    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png)
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png?imageView2/2/w/600)
 9. JAVA 接口类使用Alt+回车 自动修正，自动实现C代码
     ``` c
     	#include <jni.h>
@@ -64,5 +64,8 @@
     	}
     ```
 10. 完成接口调用，测试完成
-    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png)
+
+    ![](http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png?imageView2/2/w/600)
+    
+    
 [demo地址](https://github.com/bingxuebage/android-jni-demo)
